@@ -1,6 +1,6 @@
 body {
   background-color: gray;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   color: whitesmoke;
   font-size: 14pt;
   margin: 0;
@@ -21,13 +21,14 @@ body {
   display: inline-block;
   padding: 10px 20px;
   background-color: black;
-  font-family: 'Times New Roman', Times, serif;
+  color: whitesmoke;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 2vh;
-  color: white;
   border-radius: 15pt;
 }
 
-.menu {
+/* default to hide hmi */
+.menu-toggle {
   display: none;
   background: none;
   border: none;
@@ -36,26 +37,40 @@ body {
 }
 
 /* mobile view */
-@media (max-width: 508px) {
+@media (max-width: 442px) {
  
- /* show hmi on small screns */
+ /* show hmi on small screens */
   .navbar {
+    position: relative;
     flex-direction: column;
-    align-items: stretch;
+    align-items: end;
     padding: 8px 12px;
+    gap: 0;
   }
 
-/* hides nav bar links on small screens */
-  .menu {
+  /* hides nav bar links on small screens */
+  .menu-toggle {
+    color: black;
     display: block;
     align-self: flex-end;
-    line-height: 1;
   }
 
-  /* defaults to hidden links on small */
+  /* interactive hmi */
   .navbar a {
    display: none;
-   margin: 8px;
+   margin: 8px 0;
   }
 
+   /* toggling hmi */
+   .menu-check:checked ~ a {
+    display: block;
+  }
+} 
+
+/* title edits */
+.brand {
+  display: flex;
+  justify-content: center;
+  font-size: 40pt;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
