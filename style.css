@@ -1,18 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: gray;
   font-family: 'Times New Roman', Times, serif;
-  color: whitesmoke;
-  font-size: 14pt;
-  margin: 0;
+  color: white;
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
   display: flex;
-  justify-content: space-evenly;
-  background-color: black;
-  padding: 2%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightgray;
+  padding: .5rem 1rem;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* defaut navbar */
@@ -20,20 +30,21 @@ header {
   display: flex;
   align-self: center;
   justify-content: space-evenly;
-  align-items: flex-end;
-  gap: 15px;
-  /* white-space: nowrap; */
+  gap: 1rem;
+  white-space: nowrap;
 }
 
 /* styled navbar */
 .navbar a {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
+  padding: .5rem .75rem;
+  background-color: black;
+  color: white;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1.5vh;
-  border-radius: 15pt;
+  font-size: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 /* default to hide hmi */
@@ -41,8 +52,10 @@ header {
   display: none;
   background: none;
   border: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   cursor: pointer;
+  color: white;
+  line-height: 1;
 }
 
 /* mobile view */
@@ -50,16 +63,14 @@ header {
  
  /* show hmi on small screens */
   .navbar {
-    display: flex;
     flex-direction: column;
-    align-items: end;
-    padding: 8px 12px;
-    gap: 0;
+    align-items: flex-end;
+    padding: .5rem .75rem;
+    gap: .5rem;
   }
 
   /* hides nav bar links on small screens */
   .menu-toggle {
-    color: white;
     display: block;
     align-self: flex-end;
   }
@@ -67,7 +78,8 @@ header {
   /* interactive hmi */
   .navbar a {
    display: none;
-   margin: 8px 0;
+   margin: .5rem 0 0 0;
+   gap: 0;
   }
 
    /* toggling hmi */
@@ -78,44 +90,72 @@ header {
 
 /* title edits */
 .brand {
-  display: flex;
-  justify-content: center;
-  font-size: 40pt;
+  color: black;
+  font-size: 2rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 main {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
+  flex: 1;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 aside {
-  flex: 0 0 160px;
+  flex: 0 0 10rem;
 }
 
-aside ul {
+ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: .75rem;
 }
 
-aside li {
+li {
   background: black;
   color: white;
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: .75rem 1rem;
+  border-radius: .75rem;
   text-align: center;
   font-weight: 500;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-@media (max-width: 225px) {
+@media (max-width: 425px) {
   main { 
     flex-direction: column; 
   }
 
-  side { 
+  aside { 
     flex: 0 0 auto;
   }
+}
+
+.testimonial {
+  background-color: black;
+  color: white;
+  padding: .5rem 1rem;
+  text-align: left;
+  font-family: cursive;
+  border-radius: 1rem;
+}
+
+figcaption {
+  text-align: right;
+  padding: 1.5rem 1.25rem 0 0;
+}
+
+footer {
+  display: flex;
+  background-color: black;
+  justify-content: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  align-items: center;
+  color: white;
+  padding: .75rem 1rem;
 }
